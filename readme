@@ -1,0 +1,14 @@
+protobuf 文件 option go_package 说明
+
+option go_package=".;proto";   
+    .;     表示当前目录
+    proto  表示go文件所属包名
+
+定义咯 go_package 可以去掉 package
+
+生成go文件命令
+    protoc --go_out=.       *.proto     //生成go语言文件
+    protoc --go-grpc_out=.  *.proto     //生成grpc相关文件
+
+
+    

@@ -1,3 +1,6 @@
+grpc  protobuf  
+
+
 protobuf 文件 option go_package 说明
 
 option go_package=".;proto";   

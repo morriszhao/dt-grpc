@@ -2,6 +2,7 @@ package main
 
 import (
 	"log"
+	"morris/im-grpc/etcdd"
 	"morris/im-grpc/router"
 	"net"
 )
@@ -15,7 +16,13 @@ func main() {
 		return
 	}
 
+	//路由启动
 	serv := router.InitRouter()
+
+	//etcd 服务注册
+	etcdd.InitRegisterEtcd()
+
+	//启动grpc 服务
 	err = serv.Serve(listener)
 	if err != nil {
 		log.Fatal("grpc监听端口8888失败:", err.Error())

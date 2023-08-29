@@ -23,7 +23,7 @@ func (s *SearchService) Search(c context.Context, request *proto.SearchRequest) 
 		return &proto.SearchResponse{Response: "nihao, 收到客户端请求是数据：" + requestName}, nil
 	}
 
-	if time.Now().After(deadline) {
+	if time.Now().Before(deadline) {
 		//未到超时时间
 		requestName := request.GetRequest()
 		return &proto.SearchResponse{Response: "nihao, 收到客户端请求是数据：" + requestName}, nil
